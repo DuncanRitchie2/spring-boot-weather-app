@@ -1,11 +1,11 @@
 package com.duncanritchie.SpringBootWeatherApp;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.*;
 
 public class CodeFromMark {
         private static final String USER_AGENT = "Mozilla/5.0";
@@ -65,6 +65,21 @@ public class CodeFromMark {
                 in.close();
                 // print result
                 System.out.println(response.toString());
+                try {
+                    // parsing
+                    Object jsonObj = new JSONParser().parse(response);
+//                    System.out.println(jsonObj);
+
+//                    // typecasting obj to JSONObject
+//                    JSONObject jo = (JSONObject) obj;
+//
+//                    Object currently = jo.get("currently");
+//                    String summary = jo.get("summary").toString();
+//
+//                    System.out.println(summary);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                } finally {}
             } else {
                 System.out.println("POST request not worked");
             }
