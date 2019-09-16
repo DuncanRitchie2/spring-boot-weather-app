@@ -4,6 +4,9 @@ target/
 !**/src/main/**
 !**/src/test/**
 
+### Dark Sky API ###
+**/ApiKey*
+
 ### STS ###
 .apt_generated
 .classpath

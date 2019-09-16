@@ -1,4 +1,4 @@
-package com.duncanritchie.FirstSpringApp;
+package com.duncanritchie.SpringBootWeatherApp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
