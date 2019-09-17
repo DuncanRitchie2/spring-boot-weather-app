@@ -1,6 +1,6 @@
 package com.duncanritchie.SpringBootWeatherApp;
 
-public class GetWeather {
+public class Url {
 
     // getDarkSkyUrl() accepts two or no params.
     // If two params are given, they are the latitude and longitude.

@@ -3,13 +3,10 @@ package com.duncanritchie.SpringBootWeatherApp;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.*;
 
 public class CodeFromMark {
         private static final String USER_AGENT = "Mozilla/5.0";
-        private static final String GET_URL = GetWeather.getDarkSkyUrl();
+        private static final String GET_URL = Url.getDarkSkyUrl();
         private static final String POST_URL = "http://localhost:8080";
         private static final String POST_PARAMS = "userName=Admin";
         public static void main(String[] args) throws IOException {

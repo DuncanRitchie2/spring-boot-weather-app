@@ -9,6 +9,6 @@ public class HelloWorld {
     public String index() {
         double latitude = 53.1921;
         double longitude = -2.8803;
-        return "Hello world! This is going to be a weather app. Here is an interesting URL: "+GetWeather.getDarkSkyUrl(latitude,longitude);
+        return "Hello world! This is going to be a weather app. Here is an interesting URL: "+ Url.getDarkSkyUrl(latitude,longitude);
     }
 }
