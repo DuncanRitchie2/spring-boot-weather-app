@@ -1,5 +1,7 @@
 package com.duncanritchie.SpringBootWeatherApp;
 
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -8,9 +10,19 @@ import java.util.Scanner;
 
 public class Request {
 
+    public static String requestToJson(double latitude, double longitude) {
+        Gson gson = new Gson();
+        return gson.toJson(requestToString(latitude, longitude));
+    }
+
+    public static String requestToJson() {
+        Gson gson = new Gson();
+        return gson.toJson(requestToString());
+    }
+
     // requestToString() uses the Dark Sky API to return weather data as a String.
     // If requestToString() has two params, they are latitude and longitude.
-    public String requestToString(double latitude, double longitude) {
+    public static String requestToString(double latitude, double longitude) {
         try {
             URL url = new URL(Url.getDarkSkyUrl(latitude, longitude));
             HttpURLConnection conn = (HttpURLConnection)url.openConnection();
@@ -40,7 +52,7 @@ public class Request {
     }
 
     // If requestToString() is called without parameters, default co-ords for Chester are used.
-    public String requestToString() {
+    public static String requestToString() {
         double latitude = 53.1921;
         double longitude = -2.8803;
         return requestToString(latitude, longitude);
