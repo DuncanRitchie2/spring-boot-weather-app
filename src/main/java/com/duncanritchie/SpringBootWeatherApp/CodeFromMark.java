@@ -7,15 +7,17 @@ import java.net.URL;
 public class CodeFromMark {
         private static final String USER_AGENT = "Mozilla/5.0";
         private static final String GET_URL = Url.getDarkSkyUrl();
-        private static final String POST_URL = "http://localhost:8080";
-        private static final String POST_PARAMS = "userName=Admin";
+//        private static final String POST_URL = "http://localhost:8080";
+//        private static final String POST_PARAMS = "userName=Admin";
         public static void main(String[] args) throws IOException {
+            System.out.println("Running CodeFromMark.main()");
             sendGET();
             System.out.println("GET DONE");
 //            sendPOST();
 //            System.out.println("POST DONE");
         }
         private static void sendGET() throws IOException {
+            System.out.println("Running sendGET()");
             URL obj = new URL(GET_URL);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
             con.setRequestMethod("GET");
@@ -38,6 +40,7 @@ public class CodeFromMark {
             }
         }
 //        private static void sendPOST() throws IOException {
+//            System.out.println("Running sendPOST()");
 //            URL obj = new URL(POST_URL);
 //            HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 //            con.setRequestMethod("POST");
