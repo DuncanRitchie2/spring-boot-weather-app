@@ -13,7 +13,11 @@ public class HelloWorld {
 //        return "Hello world! This is going to be a weather app. Here is an interesting URL: "+ Url.getDarkSkyUrl(latitude,longitude);
         System.out.println("Hello from HelloWorld.index()!");
         Gson gson = new Gson();
-        String allData = gson.fromJson(Request.requestToJson(latitude,longitude),String.class);
-        return allData;
+//        String allData = gson.fromJson(Request.requestToJson(latitude,longitude),String.class);
+//        return allData;
+
+        Currently currently = gson.fromJson(Request.requestToJson(latitude,longitude),Currently.class);
+        String tempString = "The current temperature is "+currently.getTemperature();
+        return tempString;
     }
 }
