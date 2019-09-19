@@ -1,6 +1,8 @@
 package com.duncanritchie.SpringBootWeatherApp;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -10,9 +12,12 @@ import java.util.Scanner;
 
 public class Request {
 
-    public static String requestToJson(double latitude, double longitude) {
-        Gson gson = new Gson();
-        return gson.toJson(requestToString(latitude, longitude));
+    public static JsonElement requestToJson(double latitude, double longitude) {
+        JsonParser parser = new JsonParser();
+        String json = requestToString(latitude, longitude);
+        JsonElement jsonTree = parser.parse(json);
+
+        return jsonTree;
     }
 
     public static String requestToJson() {
