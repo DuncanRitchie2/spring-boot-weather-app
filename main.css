@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya&display=swap');
+
+body {
+    font-family: 'Alegreya', serif;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    padding: 12px;
+}
