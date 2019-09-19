@@ -7,11 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloWorld {
-    @RequestMapping("/")
+
+    // This returns a HTML string from localhost:8080/chester
+
+    @RequestMapping("/chester")
     public static String index() {
         double latitude = 53.1921;
         double longitude = -2.8803;
-//        return "Hello world! This is going to be a weather app. Here is an interesting URL: "+ Url.getDarkSkyUrl(latitude,longitude);
         System.out.println("Hello from HelloWorld.index()!");
 
         JsonElement jsonTree = Request.requestToJson(latitude, longitude);
@@ -66,23 +68,10 @@ public class HelloWorld {
 
                 return htmlOutput;
             }
+            // If currently is not a Json object.
             return currently.toString();
         }
-
+        // If jsonTree is not a Json object.
         return jsonTree.toString();
-
-//        Gson gson = new Gson();
-//
-//        Currently currently = gson.fromJson(Request.requestToJson(latitude,longitude),Currently.class);
-//
-//        try {
-//            String tempString = "The current temperature is "+currently.getTemperature();
-//            return tempString;
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//            String allData = gson.fromJson(Request.requestToJson(latitude,longitude),String.class);
-//            return allData;
-//        }
     }
 }
