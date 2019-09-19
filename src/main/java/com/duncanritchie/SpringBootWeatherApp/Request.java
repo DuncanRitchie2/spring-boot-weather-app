@@ -20,9 +20,12 @@ public class Request {
         return jsonTree;
     }
 
-    public static String requestToJson() {
-        Gson gson = new Gson();
-        return gson.toJson(requestToString());
+    public static JsonElement requestToJson() {
+        JsonParser parser = new JsonParser();
+        String json = requestToString();
+        JsonElement jsonTree = parser.parse(json);
+
+        return jsonTree;
     }
 
     // requestToString() uses the Dark Sky API to return weather data as a String.
