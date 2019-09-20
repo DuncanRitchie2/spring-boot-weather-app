@@ -16,9 +16,9 @@ public class Json2 {
         System.out.println("Hello from /json2");
         if (!location.equals("")) {
             System.out.println(location);
-            return Request.locationTo(location).toString();
+            return Request.requestToJson(location).toString();
         }
-        System.out.println("No location was given in query!");
-        return Request.locationTo("chicago").toString();
+        System.out.println("No location was given in query! Let's tell you about Chicago.");
+        return Request.requestToJson("chicago").toString();
     }
 }

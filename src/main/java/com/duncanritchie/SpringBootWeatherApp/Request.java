@@ -23,6 +23,17 @@ public class Request {
         return jsonTree;
     }
 
+    public static JsonElement requestToJson(String location) {
+        System.out.println("Hello from requestToJson(location)");
+        System.out.println(location);
+
+        JsonParser parser = new JsonParser();
+        String json = locationTo(location);
+        JsonElement jsonTree = parser.parse(json);
+
+        return jsonTree;
+    }
+
     public static JsonElement requestToJson() {
         System.out.println("Hello from requestToJson( no params )");
 
@@ -86,7 +97,9 @@ public class Request {
     public static String locationTo(String location) {
         System.out.println("Hello from location()");
 
-        return requestUrlToString(Url.getMapboxUrl(location));
-//        return "";
+        String hello = requestUrlToString(Url.getMapboxUrl(location));
+
+
+        return hello;
     }
 }
