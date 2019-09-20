@@ -13,6 +13,10 @@ import java.util.Scanner;
 public class Request {
 
     public static JsonElement requestToJson(double latitude, double longitude) {
+        System.out.println("Hello from requestToJson(lat, lon)");
+        System.out.println(latitude);
+        System.out.println(longitude);
+
         JsonParser parser = new JsonParser();
         String json = requestToString(latitude, longitude);
         JsonElement jsonTree = parser.parse(json);
@@ -21,6 +25,8 @@ public class Request {
     }
 
     public static JsonElement requestToJson() {
+        System.out.println("Hello from requestToJson( no params )");
+
         JsonParser parser = new JsonParser();
         String json = requestToString();
         JsonElement jsonTree = parser.parse(json);
@@ -31,6 +37,10 @@ public class Request {
     // requestToString() uses the Dark Sky API to return weather data as a String.
     // If requestToString() has two params, they are latitude and longitude.
     public static String requestToString(double latitude, double longitude) {
+        System.out.println("Hello from requestToString(lat, lon)");
+        System.out.println(latitude);
+        System.out.println(longitude);
+
         try {
             URL url = new URL(Url.getDarkSkyUrl(latitude, longitude));
             HttpURLConnection conn = (HttpURLConnection)url.openConnection();
@@ -61,6 +71,7 @@ public class Request {
 
     // If requestToString() is called without parameters, default co-ords for Chester are used.
     public static String requestToString() {
+        System.out.println("Hello from requestToString( no params )");
         double latitude = 53.1921;
         double longitude = -2.8803;
         return requestToString(latitude, longitude);

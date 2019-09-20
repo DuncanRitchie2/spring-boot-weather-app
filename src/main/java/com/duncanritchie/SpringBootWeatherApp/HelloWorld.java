@@ -19,12 +19,12 @@ public class HelloWorld {
         JsonElement jsonTree = Request.requestToJson(latitude, longitude);
 
         if (jsonTree.isJsonObject()) {
-            System.out.println("jsonTree is a Json object!");
+//            System.out.println("jsonTree is a Json object!");
             JsonObject jsonObject = jsonTree.getAsJsonObject();
             JsonElement currently = jsonObject.get("currently");
             System.out.println(currently);
             if (currently.isJsonObject()) {
-                System.out.println("currently is a Json object!");
+//                System.out.println("currently is a Json object!");
                 String outputMessage = "<h1 style='margin-top: 0;'>Duncan&rsquo;s weather page</h1><p>Greetings from Chester!</p>";
                 String[] keys = {"temperature","summary","windSpeed","windBearing","precipProbability","precipIntensity"};
                 String[] english = {"temperature","summary","wind speed","wind bearing","probability of precipitation","intensity of precipitation"};
@@ -34,13 +34,13 @@ public class HelloWorld {
                 for (int i = 0; i < keys.length; i++) {
                     outputMessage += "\n<p>The "+english[i]+" is <strong>"+currentlyObj.get(keys[i])+"</strong>"+units[i]+".</p>";
                 }
-                System.out.println(outputMessage);
+//                System.out.println(outputMessage);
 
                 String footer = "<footer style='position: absolute; bottom: 0; width: 100%; margin: 0; background-color: rgba(255,255,255,0.5);'>" +
                         "<p>Made by Duncan Ritchie using Java Spring and the Dark Sky API. <a href='https://www.duncanritchie.co.uk' title='My website'>See my website.</a> <a href='https://github.com/DuncanRitchie2/spring-boot-weather-app' title='My code on GitHub'>See the code.</a></p>" +
                         "</footer>";
 
-                System.out.println(currentlyObj.get("summary").toString());
+//                System.out.println(currentlyObj.get("summary").toString());
 
                 String htmlOutput = "<!DOCTYPE html>\n" +
                         "<html lang='en' style='height: calc(100% - 24px);'>\n" +

@@ -14,10 +14,13 @@ public class Json {
 
     @RequestMapping("/json")
     public static String index(@RequestParam double lat, @RequestParam double lon) {
+        System.out.println("Hello from /json");
         if (lat!=0 && lon!=0) {
-            return Request.requestToJson().toString();
+            System.out.println(lat);
+            System.out.println(lon);
+            return Request.requestToJson(lat, lon).toString();
         }
-        return Request.requestToJson(lat, lon).toString();
+        return Request.requestToJson().toString();
     }
 
 //    @RequestMapping("/json")
