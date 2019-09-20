@@ -82,4 +82,11 @@ public class Request {
             return "Internal server error!";
         }
     }
+
+    public static String locationTo(String location) {
+        System.out.println("Hello from location()");
+
+        return requestUrlToString(Url.getMapboxUrl(location));
+//        return "";
+    }
 }
