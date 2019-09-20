@@ -1,6 +1,5 @@
 package com.duncanritchie.SpringBootWeatherApp;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
@@ -18,7 +17,7 @@ public class Request {
         System.out.println(longitude);
 
         JsonParser parser = new JsonParser();
-        String json = requestToString(latitude, longitude);
+        String json = latLongToRequestString(latitude, longitude);
         JsonElement jsonTree = parser.parse(json);
 
         return jsonTree;
@@ -28,21 +27,36 @@ public class Request {
         System.out.println("Hello from requestToJson( no params )");
 
         JsonParser parser = new JsonParser();
-        String json = requestToString();
+        String json = latLongToRequestString();
         JsonElement jsonTree = parser.parse(json);
 
         return jsonTree;
     }
 
-    // requestToString() uses the Dark Sky API to return weather data as a String.
-    // If requestToString() has two params, they are latitude and longitude.
-    public static String requestToString(double latitude, double longitude) {
+    // latLongToRequestString() uses the Dark Sky API to return weather data as a String.
+    // If latLongToRequestString() has two params, they are latitude and longitude.
+    public static String latLongToRequestString(double latitude, double longitude) {
         System.out.println("Hello from requestToString(lat, lon)");
         System.out.println(latitude);
         System.out.println(longitude);
 
+        return requestToString(Url.getDarkSkyUrl(latitude, longitude));
+    }
+
+    // If latLongToRequestString() is called without parameters, default co-ords for Chester are used.
+    public static String latLongToRequestString() {
+        System.out.println("Hello from requestToString( no params )");
+        double latitude = 53.1921;
+        double longitude = -2.8803;
+        return latLongToRequestString(latitude, longitude);
+    }
+
+    public static String requestToString(String urlString) {
+        System.out.println("Hello from requestToString(url)");
+        System.out.println(urlString);
+
         try {
-            URL url = new URL(Url.getDarkSkyUrl(latitude, longitude));
+            URL url = new URL(urlString);
             HttpURLConnection conn = (HttpURLConnection)url.openConnection();
             conn.setRequestMethod("GET");
             conn.connect();
@@ -67,13 +81,5 @@ public class Request {
             e.printStackTrace();
             return "Internal server error!";
         }
-    }
-
-    // If requestToString() is called without parameters, default co-ords for Chester are used.
-    public static String requestToString() {
-        System.out.println("Hello from requestToString( no params )");
-        double latitude = 53.1921;
-        double longitude = -2.8803;
-        return requestToString(latitude, longitude);
     }
 }
