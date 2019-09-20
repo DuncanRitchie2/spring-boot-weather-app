@@ -40,7 +40,7 @@ public class Request {
         System.out.println(latitude);
         System.out.println(longitude);
 
-        return requestToString(Url.getDarkSkyUrl(latitude, longitude));
+        return requestUrlToString(Url.getDarkSkyUrl(latitude, longitude));
     }
 
     // If latLongToRequestString() is called without parameters, default co-ords for Chester are used.
@@ -51,7 +51,7 @@ public class Request {
         return latLongToRequestString(latitude, longitude);
     }
 
-    public static String requestToString(String urlString) {
+    public static String requestUrlToString(String urlString) {
         System.out.println("Hello from requestToString(url)");
         System.out.println(urlString);
 
