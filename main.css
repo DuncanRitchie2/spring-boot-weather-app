@@ -1,16 +1,43 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya&display=swap');
 
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Alegreya', serif;
     text-align: center;
+    margin: 0;
+    padding: 0 0 60px;
+    height: 100%;
+    background-image: linear-gradient(to top, rgb(253, 234, 255), rgb(252, 173, 216));
+    background-attachment: fixed;
+}
+
+input {
+    width: calc(100% - 30px);
+    margin-top: 6px;
+    padding: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+button {
+    font-family: inherit;
 }
 
 footer {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: calc(100% - 24px);
+    margin: 0;
+    padding: 36px 12px 12px;
+    background-image: linear-gradient(to bottom, rgba(253, 234, 255, 0), rgb(253, 234, 255),rgb(252, 173, 216));
     display: flex;
     list-style: none;
     justify-content: space-evenly;
-    padding: 12px;
+    flex-wrap: wrap;
 }
