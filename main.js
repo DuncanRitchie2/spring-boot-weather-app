@@ -3,16 +3,23 @@ console.log("JavaScript loaded!");
 const getData = async () => {
 
     const input = document.getElementById("input");
+    const message = document.getElementById("message");
 
     if (input.value) {
         if (true) {
-            const url = "http://localhost:8080/json?location="+input.value;
+            message.textContent = "Please wait for results...";
+
+            const url = "http://localhost:8080/json?location="+input.value.replace(/ /g,"-");
             console.log(url);
             const response = await fetch(url);
 
             let data = await response.json();
             console.log(data);
 
+            message.textContent = "";
+
+            document.getElementById("results").style.display = "initial";
+            document.getElementById("place-name").textContent = data.place_name;
             document.getElementById("summary").textContent = data.daily.summary;
 
             const currentlyKeys = [
@@ -59,7 +66,7 @@ const getData = async () => {
     }
 
     else {
-        document.getElementById('summary').textContent = "Please fill in both inputs!"
+        message.textContent = "Please fill in the input!"
     }
     
 }
