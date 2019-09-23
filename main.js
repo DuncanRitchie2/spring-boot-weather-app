@@ -2,12 +2,11 @@ console.log("JavaScript loaded!");
 
 const getData = async () => {
 
-    const inputLat = document.getElementById("inputLat");
-    const inputLon = document.getElementById("inputLon");
+    const input = document.getElementById("input");
 
-    if (inputLat.value && inputLon.value) {
-        if (parseFloat(inputLat.value) && parseFloat(inputLon.value)) {
-            const url = "http://localhost:8080/json?lat="+parseFloat(inputLat.value)+"&lon="+parseFloat(inputLon.value);
+    if (input.value) {
+        if (true) {
+            const url = "http://localhost:8080/json?location="+input.value;
             console.log(url);
             const response = await fetch(url);
 

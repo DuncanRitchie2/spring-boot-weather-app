@@ -12,18 +12,14 @@ public class Json {
     // This returns a Json string from localhost:8080/json
 
     @RequestMapping("/json")
-    public static String index(@RequestParam double lat, @RequestParam double lon) {
+    public static String index(@RequestParam String location) {
         System.out.println("Hello from /json");
-        if (lat!=0 && lon!=0) {
-            System.out.println(lat);
-            System.out.println(lon);
-            return Request.requestToJson(lat, lon).toString();
+        if (!location.equals("")) {
+            System.out.println(location);
+            String json = Request.locationToDarkSkyJsonString(location);
+            return json;
         }
-        return Request.requestToJson().toString();
+        System.out.println("No location was given in query! Let's tell you about Chicago.");
+        return Request.requestToJson("chicago").toString();
     }
-
-//    @RequestMapping("/json")
-//    public static String index() {
-//        return Request.requestToJson().toString();
-//    }
 }

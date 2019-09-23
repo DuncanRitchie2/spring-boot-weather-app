@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class Json2 {
 
-    // This returns a Json string from localhost:8080/json
+    // This returns a Json string from localhost:8080/json2
 
     @RequestMapping("/json2")
-    public static String index(@RequestParam String location) {
+    public static String index(@RequestParam double lat, @RequestParam double lon) {
         System.out.println("Hello from /json2");
-        if (!location.equals("")) {
-            System.out.println(location);
-            String json = Request.locationToDarkSkyJsonString(location);
-            return json;
+        if (lat!=0 && lon!=0) {
+            System.out.println(lat);
+            System.out.println(lon);
+            return Request.requestToJson(lat, lon).toString();
         }
-        System.out.println("No location was given in query! Let's tell you about Chicago.");
-        return Request.requestToJson("chicago").toString();
+        return Request.requestToJson().toString();
     }
+
 }
