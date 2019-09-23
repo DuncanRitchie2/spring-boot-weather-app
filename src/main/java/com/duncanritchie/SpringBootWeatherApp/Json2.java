@@ -16,7 +16,8 @@ public class Json2 {
         System.out.println("Hello from /json2");
         if (!location.equals("")) {
             System.out.println(location);
-            return Request.requestToJson(location).toString();
+            String json = Request.locationToDarkSkyJsonString(location);
+            return json;
         }
         System.out.println("No location was given in query! Let's tell you about Chicago.");
         return Request.requestToJson("chicago").toString();

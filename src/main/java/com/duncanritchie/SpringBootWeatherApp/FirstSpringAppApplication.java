@@ -1,5 +1,6 @@
 package com.duncanritchie.SpringBootWeatherApp;
 
+import com.google.gson.JsonElement;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,6 +13,9 @@ public class FirstSpringAppApplication {
         System.out.println("Running FirstSpringApplication.java!");
 		SpringApplication.run(FirstSpringAppApplication.class, args);
 		try {
+            String json = Request.locationToDarkSkyJsonString("New York");
+            System.out.println(json);
+
 //            System.out.println("Trying HelloWorld.index()!");
 //			  HelloWorld.index();
 //            System.out.println("Requesting Json!");
