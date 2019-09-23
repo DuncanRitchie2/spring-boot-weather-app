@@ -20,6 +20,12 @@ const getData = async () => {
 
             document.getElementById("results").style.display = "initial";
             document.getElementById("place-name").textContent = data.place_name;
+
+            document.getElementById("latitude").textContent = Math.abs(data.latitude);
+            document.getElementById("longitude").textContent = Math.abs(data.longitude);
+            document.getElementById("eastWest").textContent = (data.longitude<0 ? "West" : "East");
+            document.getElementById("northSouth").textContent = (data.latitude<0 ? "South" : "North");
+
             document.getElementById("summary").textContent = data.daily.summary;
 
             const currentlyKeys = [
@@ -72,3 +78,4 @@ const getData = async () => {
 }
 
 document.getElementById("submit").addEventListener("click",getData);
+document.getElementById("input").addEventListener("keypress",(e)=>{e.keyCode==13 ? getData() : null});
