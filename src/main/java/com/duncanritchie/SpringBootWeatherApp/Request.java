@@ -99,8 +99,8 @@ public class Request {
     public static String locationToMapboxJsonString(String location) {
         System.out.println("Hello from locationToMapboxJsonString()");
 
-        String hello = requestUrlToString(Url.getMapboxUrl(location));
-        return hello;
+        String mapboxString = requestUrlToString(Url.getMapboxUrl(location));
+        return mapboxString;
     }
     
     public static String locationToDarkSkyJsonString(String location) {
@@ -114,7 +114,7 @@ public class Request {
         JsonObject jsonObj = jsonTree.getAsJsonObject();
         System.out.println("jsonObj = "+jsonObj);
 
-        JsonObject featuresZero =  jsonObj.get("features").getAsJsonArray().get(0).getAsJsonObject();
+        JsonObject featuresZero = jsonObj.get("features").getAsJsonArray().get(0).getAsJsonObject();
         System.out.println("featuresZero = "+featuresZero);
 
         String placeName = featuresZero.get("place_name").getAsString();
