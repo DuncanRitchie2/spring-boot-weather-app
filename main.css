@@ -21,31 +21,36 @@ h1 {
 }
 
 h2 {
-    margin: 18px 0;
+    margin: 9px 0;
     padding: 12px;
-    background-image: linear-gradient(rgba(252, 173, 216, 0), rgba(253, 234, 255, 0.3), rgba(253, 234, 255, 0.5), rgba(252, 173, 216, 0))
+    background-image: linear-gradient(rgba(252, 173, 216, 0), rgba(255, 252, 244, 0.2), rgba(255, 252, 244, 0.4), rgba(252, 173, 216, 0))
 }
 
 input {
     width: calc(100% - 30px);
-    max-width: 500px;
+    max-width: 488px;
     margin-top: 6px;
-    padding: 3px;
+    padding: 6px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
     font-weight: 600;
+    color: rgb(66, 40, 0);
+    border: 1px solid rgb(180, 156, 121);
 }
 
 button {
     width: calc(100% - 30px);
     max-width: 500px;
     font-family: inherit;
+    font-size: 16px;
     margin-bottom: 12px;
     padding: 3px;
     border-bottom-left-radius: 36px;
     border-bottom-right-radius: 36px;
+    background-color: rgb(228, 228, 228);
 }
 
 p {

@@ -6,7 +6,6 @@ const getData = async () => {
     const message = document.getElementById("message");
 
     if (input.value) {
-        if (true) {
             message.textContent = "Please wait for results...";
 
             const url = "http://localhost:8080/json?location="+input.value.replace(/ /g,"-");
@@ -67,12 +66,11 @@ const getData = async () => {
             for (let i = 0; i < currentlyKeys.length; i++) {
                 document.getElementById("current-conditions").innerHTML += "\n<p>The "+currentlyKeys[i].english+" is <strong>"+(""+data.currently[currentlyKeys[i].key]).toLowerCase()+"</strong>"+currentlyKeys[i].units+".</p>";
             }
-        }
 
     }
 
     else {
-        message.textContent = "Please fill in the input!"
+        message.textContent = "Please fill in the input!";
     }
     
 }
