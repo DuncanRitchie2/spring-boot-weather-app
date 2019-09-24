@@ -7,6 +7,7 @@ target/
 
 ### Dark Sky API ###
 **/ApiKey*
+**/Secrets*
 
 ### STS ###
 .apt_generated

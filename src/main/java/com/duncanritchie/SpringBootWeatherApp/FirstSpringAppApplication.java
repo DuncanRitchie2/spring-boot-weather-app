@@ -12,18 +12,6 @@ public class FirstSpringAppApplication {
 	public static void main(String[] args) {
         System.out.println("Running FirstSpringApplication.java!");
 		SpringApplication.run(FirstSpringAppApplication.class, args);
-		try {
-            String json = Request.locationToDarkSkyJsonString("New York");
-            System.out.println(json);
-
-//            System.out.println("Trying HelloWorld.index()!");
-//			  HelloWorld.index();
-//            System.out.println("Requesting Json!");
-//			  Request.requestToJson();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-		} finally {
-		}
 	}
 
 }
