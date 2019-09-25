@@ -6,7 +6,7 @@ target/
 **/.DS_Store
 
 ### Dark Sky API ###
-# **/ApiKey*
+**/ApiKey*
 **/Secrets*
 
 ### STS ###
