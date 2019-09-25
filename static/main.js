@@ -8,7 +8,7 @@ const getData = async () => {
     if (input.value) {
             message.textContent = "Please wait for results...";
 
-            const url = "http://localhost:8080/json?location="+input.value.replace(/ /g,"-");
+            const url = ( location.hostname.startsWith("localhost")  ? "http://localhost:8080" : "https://" + location.hostname ) + "/json?location=" + input.value.replace(/ /g,"-");
             console.log(url);
             const response = await fetch(url);
 
