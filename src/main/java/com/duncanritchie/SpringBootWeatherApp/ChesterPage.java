@@ -43,7 +43,7 @@ public class ChesterPage {
 //                System.out.println(currentlyObj.get("summary").toString());
 
                 String htmlOutput = "<!DOCTYPE html>\n" +
-                        "<html lang='en' style='height: calc(100% - 24px);'>\n" +
+                        "<html lang='en' style='height: 100%;'>\n" +
                         "  <head>\n" +
                         "    <meta charset='utf-8' />\n" +
                         "    <link rel='shortcut icon' href='https://www.duncanritchie.co.uk/favicon.ico' />\n" +
