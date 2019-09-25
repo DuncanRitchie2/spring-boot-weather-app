@@ -12,7 +12,7 @@
 	<artifactId>FirstSpringApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>FirstSpringApp</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Demo project for Spring Boot returning weather data for a user-specified location</description>
 
 	<properties>
 		<java.version>1.8</java.version>
