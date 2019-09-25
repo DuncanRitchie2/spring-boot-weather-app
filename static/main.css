@@ -74,7 +74,14 @@ footer {
     padding: 36px 12px 12px;
     background-image: linear-gradient(to bottom, rgba(253, 234, 255, 0), rgb(253, 234, 255),rgb(252, 173, 216));
     display: flex;
+}
+
+ul {
+    width: 100%;
+    display: flex;
     list-style: none;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
 }
