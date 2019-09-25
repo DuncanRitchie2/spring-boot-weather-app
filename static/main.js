@@ -1,4 +1,4 @@
-console.log("JavaScript loaded!");
+// console.log("JavaScript loaded!");
 
 const getData = async () => {
 
@@ -9,11 +9,11 @@ const getData = async () => {
             message.textContent = "Please wait for results...";
 
             const url = ( location.hostname.startsWith("localhost")  ? "http://localhost:8080" : "https://" + location.hostname ) + "/json?location=" + input.value.replace(/ /g,"-");
-            console.log(url);
+            // console.log(url);
             const response = await fetch(url);
 
             let data = await response.json();
-            console.log(data);
+            // console.log(data);
 
             message.textContent = "";
 
