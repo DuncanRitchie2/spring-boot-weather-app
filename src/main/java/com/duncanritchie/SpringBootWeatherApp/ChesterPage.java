@@ -36,7 +36,7 @@ public class ChesterPage {
                 }
 //                System.out.println(outputMessage);
 
-                String footer = "<footer style='position: absolute; bottom: 0; width: 100%; margin: 0; background-color: rgba(255,255,255,0.5);'>" +
+                String footer = "<footer style='position: absolute; bottom: 0; width: 100%; margin: 0; border-top: 3px solid rosybrown; background-color: rgba(255,255,225,0.83);'>" +
                         "<p>Made by Duncan Ritchie using Java Spring and the Dark Sky API. <a href='https://www.duncanritchie.co.uk' title='My website'>See my website.</a> <a href='https://github.com/DuncanRitchie2/spring-boot-weather-app' title='My code on GitHub'>See the code.</a></p>" +
                         "</footer>";
 
@@ -53,14 +53,14 @@ public class ChesterPage {
                         "    /><title>Duncan&rsquo;s weather page</title>" +
                         "<link href='https://fonts.googleapis.com/css?family=Alegreya&display=swap' rel='stylesheet'>" +
                         "</head>" +
-                        "<body style='text-align: center; font-family: \"Alegreya\", serif; padding: 0; margin: 0; height: 100%; background-image: url(" +
+                        "<body style='text-align: center; font-family: \"Alegreya\", serif; padding: 0; margin: 0; height: calc(100% - 24px); background-image: url(" +
                         PhotoFromSummary.getUrl(currentlyObj.get("summary").toString().replace("\"",""))+
                         ");" +
                         "    background-position: center center;" +
                         "    background-size: cover;" +
                         "    background-repeat: no-repeat;" +
                         "'>" +
-                        "<div id='main' style='background: rgba(255,255,255,0.6); margin-top: 24px; padding: 12px'>" +
+                        "<div id='main' style='background: rgba(255,255,225,0.92); border-top: 3px solid saddlebrown; border-bottom: 3px solid saddlebrown; margin-top: 24px; padding: 12px'>" +
                         outputMessage +
                         "</div>" +
                         footer +
