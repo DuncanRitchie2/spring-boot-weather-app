@@ -25,7 +25,9 @@ public class ChesterPage {
             System.out.println(currently);
             if (currently.isJsonObject()) {
 //                System.out.println("currently is a Json object!");
-                String outputMessage = "<h1 style='margin-top: 0;'>Duncan&rsquo;s weather page</h1><p>Greetings from Chester!</p>";
+                String outputMessage = "<h1 style='margin-top: 0;'>Duncan&rsquo;s Weather Page (for Chester only)</h1>" +
+                        "<p>(If you want to type your own place in, see <a href='./' title='Duncan&rsquo;s Weather Page with an input'>my page with an input</a>.)</p>" +
+                        "<p>Greetings from Chester!</p>";
                 String[] keys = {"temperature","summary","windSpeed","windBearing","precipProbability","precipIntensity"};
                 String[] english = {"temperature","summary","wind speed","wind bearing","probability of precipitation","intensity of precipitation"};
                 String[] units = {"&deg;C",""," mph","&deg;","%",""};
@@ -60,7 +62,7 @@ public class ChesterPage {
                         "    <meta\n" +
                         "      name='viewport'\n" +
                         "      content='width=device-width, initial-scale=1, shrink-to-fit=no'\n" +
-                        "    /><title>Duncan&rsquo;s weather page</title>" +
+                        "    /><title>Duncan&rsquo;s Weather Page (for Chester only)</title>" +
                         "<link href='https://fonts.googleapis.com/css?family=Alegreya&display=swap' rel='stylesheet'>" +
                         "</head>" +
                         "<body style='text-align: center; font-family: \"Alegreya\", serif; padding: 0; margin: 0; height: calc(100% - 24px); background-image: url(" +
