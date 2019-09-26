@@ -36,8 +36,18 @@ public class ChesterPage {
                 }
 //                System.out.println(outputMessage);
 
-                String footer = "<footer style='position: absolute; bottom: 0; width: 100%; margin: 0; border-top: 3px solid rosybrown; background-color: rgba(255,255,225,0.83);'>" +
-                        "<p>Made by Duncan Ritchie using Java Spring and the Dark Sky API. <a href='https://www.duncanritchie.co.uk' title='My website'>See my website.</a> <a href='https://github.com/DuncanRitchie2/spring-boot-weather-app' title='My code on GitHub'>See the code.</a></p>" +
+                String footer = "<footer style='position: absolute; bottom: 0; width: 100%; margin: 0; padding: 12px; border-top: 3px solid rosybrown; background-color: rgba(255,255,225,0.83);'>" +
+                        "<ul style='width: 100%;\n" +
+                        "    display: flex;\n" +
+                        "    list-style: none;\n" +
+                        "    justify-content: space-evenly;\n" +
+                        "    flex-wrap: wrap;\n" +
+                        "    padding: 0;\n" +
+                        "    margin: 0;'>" +
+                        "<li>Made by <a href='https://www.duncanritchie.co.uk' title='My website'>Duncan Ritchie</a> using Java Spring.</li>" +
+                        "<li> Powered by the <a href='https://mapbox.com/about/maps' title='Mapbox'>Mapbox</a> and <a href='https://darksky.net/poweredby/' title='Dark Sky'>Dark Sky</a> APIs.</li>" +
+                        "<li><a href='https://github.com/DuncanRitchie2/spring-boot-weather-app' title='My code on GitHub'>See the code.</a></li>" +
+                        "</ul>" +
                         "</footer>";
 
 //                System.out.println(currentlyObj.get("summary").toString());
