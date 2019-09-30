@@ -19,7 +19,7 @@ public class Json {
             String json = Request.locationToDarkSkyJsonString(location);
             return json;
         }
-        System.out.println("No location was given in query! Let's tell you about Chicago.");
-        return Request.requestToJson("chicago").toString();
+        System.out.println("No location was given in query! Let's tell you about Chester.");
+        return Request.requestToJson("chester").toString();
     }
 }
